@@ -1,0 +1,26 @@
+<?php session_start(); ?>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nr</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($_SESSION['posts'] as $posts)
+           { ?>
+    <tr>
+        <td><?php  echo $posts['id']; ?></td>
+        <td><?php  echo $posts['title']; ?></td>
+        <td><?php  echo $posts['author']; ?></td>
+        <td><?php  echo $posts['date']; ?></td>
+        <td>
+            <button class="delete-button" onclick="deletePost(<?php echo $posts['id']; ?>)">X</button>
+        </td>
+    </tr>
+    <?php }?>
+    </tbody>
+</table>

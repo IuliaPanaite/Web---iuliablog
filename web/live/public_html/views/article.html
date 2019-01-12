@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Iulia Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/blog.css">
+
+</head>
+<body>
+<header>
+    <img class="img-header" src="../images/blog1.jpg" alt="blog1.jpg">
+</header>
+<main>
+
+    <p class="title">
+        <?php  echo $_SESSION['post'][0]['title']; ?>
+    </p>
+
+    <p class="author">
+        Author: <?php  echo $_SESSION['post'][0]['author']; ?>
+    </p>
+    <div class="content">
+        <?php  echo $_SESSION['post'][0]['content']; ?>
+
+    </div>
+
+</main>
+<footer>
+    <div class="footer">Feel the magic of the blog</div>
+</footer>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="../js/app2.js"></script>
+</body>
+
+</html>

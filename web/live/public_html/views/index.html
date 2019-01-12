@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Iulia Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/principal.css">
+
+</head>
+<body>
+<header>
+    <img class="img-header" src="../images/blog3.jpg" alt="blog.jpg">
+</header>
+<main>
+    <div>
+        <button class="add-button" onclick="addPost()">Create post</button>
+        <br>
+        <br>
+        <button class="all-button" onclick="getAll()">View list</button>
+    </div>
+    <div id="table" class="container-table">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="invisibil">Nr</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Favorite</th>
+                <th class="invisibil">Date</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php foreach($_SESSION['posts'] as $posts)
+           { ?>
+            <tr>
+                <td class="invisibil"><?php  echo $posts['id']; ?></td>
+                <td class="pointer" onclick="seeContent(<?php  echo $posts['id']; ?>)"><?php  echo $posts['title']; ?></td>
+                <td><?php  echo $posts['author']; ?></td>
+
+                <?php if($posts['favorite']==1) {?>
+                <td>
+                    <span class="yellow-star" onclick="changeFavorite(<?php  echo $posts['id']; ?>, 0)">&starf;</span>
+                </td>
+                <?php } ?>
+
+                <?php if($posts['favorite']==0) {?>
+                <td>
+                    <span class="black-star" onclick="changeFavorite(<?php  echo $posts['id']; ?>, 1)">&starf;</span>
+                </td>
+                <?php } ?>
+
+                <td class="invisibil"><?php  echo $posts['date']; ?></td>
+                <td>
+                    <button class="delete-button" onclick="deletePost(<?php echo $posts['id']; ?>)">X</button>
+                </td>
+            </tr>
+            <?php }?>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+<footer>
+    <div class="footer">Write your own story</div>
+</footer>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

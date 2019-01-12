@@ -1,0 +1,47 @@
+body {
+    background-color: #999;
+}
+
+.img-header {
+    margin-top: -1%;
+    margin-left: -1%;
+    width: 101.5%;
+    height: 200px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 30px;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.author {
+    text-align: center;
+    font-size: 25px;
+    margin-left: 20%;
+    color: #666;
+}
+
+.content {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 768px) {
+    .content{
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 20px;
+    }
+}
